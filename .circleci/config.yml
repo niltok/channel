@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/ubuntu-server
     steps:
+      - run: apt-get update
       - run: apt-get -y install git build-essential
       - checkout
       - run: make test
