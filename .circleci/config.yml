@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: archlinux/base
     steps:
-      - pacman -Syyu --noconfirm
-      - pacman -S --noconfirm base-devel clang
+      - run: pacman -Syyu --noconfirm
+      - run: pacman -S --noconfirm base-devel clang
       - checkout
       - run: make test
