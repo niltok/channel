@@ -34,17 +34,17 @@ class channel {
         }
         std::unique_ptr<T> get() {
             if (isBusy()) return nullptr;
-            auto p = std::make_unique<T>(*(ptr->data));
+            std::unique_ptr<T> p {new T(*(ptr->data))};
             ptr = ptr->next;
-            return p;
+            return std::move(p);
         }
     };
     channel() : head(std::make_shared<node>()) {}
     channel(const channel &) = delete;
     void operator=(const channel &) = delete;
     listener operator()() { return listener(head); }
-    channel &operator<<(T data) {
-        head->data = std::make_unique<T>(data);
+    channel &operator<<(const T &data) {
+        head->data = std::move(std::unique_ptr<T>(new T(data)));
         head->next = std::make_shared<node>();
         head = head->next;
         return *this;
