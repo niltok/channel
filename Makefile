@@ -1,5 +1,5 @@
 test: test.cpp
-	$(CXX) -std=c++1y -lpthread test.cpp -o ./test.o
+	$(CXX) -std=c++1y test.cpp -o ./test.o
 	./test.o
 
 clean:

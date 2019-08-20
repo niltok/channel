@@ -5,6 +5,6 @@ jobs:
       - image: circleci/ubuntu-server
     steps:
       - run: apt-get update
-      - run: apt-get -y install git build-essential
+      - run: apt-get -y install git make clang-3.5 llvm
       - checkout
       - run: make test
