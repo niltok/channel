@@ -5,7 +5,7 @@ jobs:
       - image: circleci/ubuntu-server
     steps:
       - run: apt-get update
-      - run: wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add
+      - run: wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
       - run: apt-get -y install git make clang lld build-essential
       - checkout
       - run: make test
