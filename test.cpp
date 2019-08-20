@@ -2,6 +2,7 @@
 #include <random>
 #include <thread>
 #include <vector>
+#include <cassert>
 
 #include "channel.hpp"
 
