@@ -1,5 +1,5 @@
 test: test.cpp
-	clang++ -std=c++1y test.cpp -o ./test.o
+	clang++ -pthread -std=c++1y test.cpp -o ./test.o
 	./test.o
 
 clean:
