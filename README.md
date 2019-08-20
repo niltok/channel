@@ -1,4 +1,7 @@
 # Channel
+
+[![CircleCI](https://circleci.com/gh/goldimax/channel.svg?style=svg)](https://circleci.com/gh/goldimax/channel)
+
 ## Usage
 
 ```c++
