@@ -6,6 +6,6 @@ jobs:
     steps:
       - run: apt-get update
       - run: wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
-      - run: apt-get -y install git make clang lld build-essential
+      - run: apt-get -y install git make clang-9 lld-9 llvm-9 libc++-9-dev libc++abi-9-dev build-essential
       - checkout
       - run: make test
