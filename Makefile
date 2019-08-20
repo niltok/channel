@@ -1,6 +1,6 @@
 test: test.cpp
-	$(CXX) -std=c++1y test.cpp -o ./out/test.o
-	./out/test.o
+	$(CXX) -std=c++1y test.cpp -o ./test.o
+	./test.o
 
 clean:
-	rm -rf ./out
+	rm -rf ./test.o
