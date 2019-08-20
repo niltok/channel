@@ -2,10 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ubuntu-server
+      - image: archlinux/base
     steps:
-      - run: apt-get update
-      - run: wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
-      - run: apt-get -y install git make clang build-essential
+      - pacman -Syyu --noconfirm
+      - pacman -S --noconfirm base-devel clang
       - checkout
       - run: make test
